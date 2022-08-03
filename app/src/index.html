@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <title>uniswap</title>
+  </head>
+  <style>
+    input {
+      display: block;
+      margin-bottom: 12px;
+    }
+    button {
+      margin-bottom: 12px;
+    }
+  </style>
+  <body>
+    <h1> My uniswap </h1>
+    <label>tokenA-Address:</label>
+    <input type="text" id="tokenA"/>
+    <label>tokenB-Address</label>
+    <input type="text" id="tokenB"/>
+    <button onclick="App.createPair()">创建币对</button><br/>
+
+    <button onclick="App.getAAddress()">获取A币地址</button>
+    <button onclick="App.getBAddress()">获取B币地址</button>
+    <button onclick="App.getAccount()">获取账户地址</button>
+    <button onclick="App.getPairAddress()">获取币对地址</button></br>
+
+    <label>切换币对</label>
+    <select id="pair">
+      <option disabled selected hidden>--选择币对(否则为默认)--</option>
+    </select>
+  
+    <button onclick="App.setPair()">设置币对</button></br>
+    
+    <label>输入增加A币流通量:</label>
+    <input type="text" id="liquiltyA"/>
+    <label>输入增加B币流通量:</label>
+    <input type="text" id="liquiltyB"/>
+    <button onclick="App.addLiquilty()">增加流动性</button></br>
+
+    <label>输入取回流动性(LP)的值：</label>
+    <input type="text" id="lpAmount"/>
+    <select id="getToken">
+      <option disabled selected hidden>--选择想获取的代币--</option>
+      <option value="A">A币</option>
+      <option value="B">B币</option>
+    </select>
+    <button onclick="App.burn()">取回</button>
+    <button onclick="App.getLpAmount()">查看用户LP余额</button>
+    <button onclick="App.getBalance()">查看交易池储存量</button></br>
+
+    <label>输入交换数量(你给多少相对的数量):</label>
+    <input type="text" id="exchangeAmount"/>
+    <select id="token">
+      <option disabled selected hidden>--选择想获取的代币--</option>
+      <option value="A">A币</option>
+      <option value="B">B币</option>
+    </select>
+    <button onclick="App.swap()">获取</button>
+
+    <script src="index.js"></script>
+  </body>
+</html>
